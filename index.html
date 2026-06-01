@@ -15,13 +15,13 @@
   --text:#1C1C1E;--muted:#6B7280;--border:rgba(197,151,58,.22);
   --card:#FFFFFF;
 }
-body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;min-height:100vh}
+body{font-family:'Source Serif 4',Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;min-height:100vh}
 a{color:var(--navy-l);text-decoration:none}
 
 /* ── LAYOUT ── */
-.app{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
-.sidebar{position:fixed;top:0;left:0;width:220px;height:100vh;overflow-y:auto;border-right:1px solid var(--border);background:var(--cream);padding:0;display:flex;flex-direction:column}
-.main{margin-left:220px;min-height:100vh}
+.app{display:flex;min-height:100vh}
+.sidebar{position:fixed;top:0;left:0;width:220px;height:100vh;overflow-y:auto;border-right:1px solid var(--border);background:var(--cream);padding:0;display:flex;flex-direction:column;z-index:10}
+.main{margin-left:220px;flex:1;min-height:100vh;width:calc(100vw - 220px);overflow-x:hidden}
 
 /* ── SIDEBAR ── */
 .sb-brand{padding:28px 20px 20px;border-bottom:1px solid var(--border)}
@@ -46,7 +46,7 @@ a{color:var(--navy-l);text-decoration:none}
 /* ── COVER ── */
 .cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 48px;position:relative;overflow:hidden;background:linear-gradient(160deg,#FDFCF8 60%,rgba(197,151,58,.06))}
 .cover-series{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
-.cover h1{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,6vw,6rem);font-weight:400;color:var(--navy);line-height:1.02;margin-bottom:6px}
+.cover h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(3.2rem,6vw,6rem);font-weight:400;color:var(--navy);line-height:1.05;margin-bottom:6px;white-space:normal;word-break:normal}
 .cover h1 em{font-style:italic;color:var(--gold)}
 .cover-subtitle{font-size:1rem;color:var(--slate);font-style:italic;margin-bottom:4px}
 .cover-en{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.65;margin-bottom:36px}
@@ -62,9 +62,9 @@ a{color:var(--navy-l);text-decoration:none}
 .cover-author{position:absolute;right:28px;bottom:24px;font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;opacity:.45}
 
 /* ── CONTENT LAYOUT ── */
-.content{padding:52px 56px 80px;max-width:760px}
-.content-label{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.content h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:var(--navy);margin-bottom:6px;line-height:1.15}
+.content{padding:52px 56px 80px;max-width:760px;width:100%}
+.content-label{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
+.content h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:var(--navy);margin-bottom:6px;line-height:1.2;white-space:normal;word-break:normal;overflow-wrap:break-word}
 .content-rule{width:36px;height:1px;background:var(--gold);margin:10px 0 24px;opacity:.45}
 .content p{font-size:.95rem;color:var(--text);line-height:1.88;margin-bottom:1.1rem}
 .content p strong{font-weight:400;color:var(--navy);font-style:italic}
